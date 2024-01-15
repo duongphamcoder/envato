@@ -16,7 +16,11 @@ const ImageCustom = ({
     const img = new Image();
     img.src = src;
 
-    img.onload = () => setImgSrc(src);
+    img.onload = () => {
+      setTimeout(() => {
+        setImgSrc(src);
+      }, 1000);
+    };
   }, [src]);
 
   return <img {...{ src: imgSrc, ...props }} />;
